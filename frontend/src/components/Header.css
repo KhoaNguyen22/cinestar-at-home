@@ -12,27 +12,84 @@ header {
   max-width: 80%;
 }
 .hd-top {
+  height: 78px;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+}
+.hd-top,
+.hd-bottom {
   margin: 0 auto;
 }
+/* Header top[ left styles */
+.hd-top-left {
+  height: 45px;
+}
+.hd-top-left img {
+  height: 100%;
+}
+.hd-bottom {
+  height: 45px;
+}
+/* Header top mid styles */
 
 .hd-top-mid {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 5;
+  gap: 10px;
+  max-width: 450px;
 }
+
+.book-ticket-btn,
+.book-snack-btn {
+  font-family: "Anton", sans-serif;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  height: 100%;
+  padding: 7px 12px;
+  gap: 10px;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.book-ticket-btn {
+  display: flex;
+  align-items: center;
+  background: #f3ea28;
+}
+.book-ticket-btn:hover {
+  background: linear-gradient(106deg, #639, #36c 102.69%);
+}
+.book-snack-btn {
+  display: flex;
+  color: #f8fafc;
+
+  align-items: center;
+  background: linear-gradient(106deg, #639, #36c 102.69%);
+}
+.book-snack-btn:hover {
+  background: linear-gradient(90deg, #ff6d00, #ffc107);
+}
+/* Header top right styles */
+
 .hd-top-right {
   flex: 3;
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 30px;
 }
-.hd-top-right-search-input-container {
+.search-input-container {
   display: flex;
   align-items: center;
   flex: 1;
-  max-width: 300px;
-
+  max-width: 250px;
+  min-width: 100px;
   position: relative;
 }
-.hd-top-right-search-input {
+.search-input {
   border-radius: 20px;
   border: none;
   background-color: #f8fafc;
@@ -49,4 +106,28 @@ header {
 .search-icon {
   position: absolute;
   right: 9px;
+}
+.auth-container {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  gap: 10px;
+}
+.auth-icon {
+  height: 24px;
+}
+.language-picker-container {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* Header bottom left */
+.hd-bottom-left {
+  display: flex;
+  gap: 40px;
+}
+.hd-bottom-right {
+  display: flex;
+  gap: 26px;
 }
