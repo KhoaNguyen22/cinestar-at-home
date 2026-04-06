@@ -1,16 +1,13 @@
 package k.com.cinestar.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import k.com.cinestar.enums.Genre;
+import java.util.Set;
+
+import jakarta.persistence.*;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-
-import java.util.Set;
 
 @Entity
 @Getter
@@ -20,17 +17,21 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
+
     String posterUrl;
     String title;
+
+    @ManyToMany
+    @JoinTable(
+            name = "movie_genre",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
     Set<Genre> genres;
+
     int duration;
     String country;
     String subtitle;
     String ageRating;
     String description;
     String content;
-
-
-
-
 }
