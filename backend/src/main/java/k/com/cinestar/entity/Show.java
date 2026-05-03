@@ -20,9 +20,11 @@ public class Show {
     Long id;
 
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_show_movie"))
     Movie movie;
 
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_show_screen"))
     Screen screen;
 
     LocalDateTime startTime;
