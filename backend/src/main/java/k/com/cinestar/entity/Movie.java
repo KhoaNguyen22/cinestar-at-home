@@ -24,8 +24,9 @@ public class Movie {
     @ManyToMany
     @JoinTable(
             name = "movie_genre",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+            joinColumns = @JoinColumn(name = "movie_id", foreignKey = @ForeignKey(name = "fk_movie_genre_movie")),
+            inverseJoinColumns =
+                    @JoinColumn(name = "genre_id", foreignKey = @ForeignKey(name = "fk_movie_genre_genre")))
     Set<Genre> genres;
 
     int duration;
