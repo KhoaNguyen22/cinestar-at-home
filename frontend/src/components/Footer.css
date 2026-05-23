@@ -1,0 +1,101 @@
+.footer-top {
+  display: flex;
+}
+.footer-top .left {
+  flex: 0.3;
+}
+.footer-top .right {
+  flex: 1;
+}
+
+footer {
+  background-color: #639;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+  color: #ecf2ff;
+}
+.footer-quick-booking {
+  display: flex;
+  gap: 15px;
+}
+.footer-quick-booking .book-ticket-btn,
+.book-snack-btn {
+  padding: 10px 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.footer-quick-booking .book-ticket-btn {
+  color: #0f172a;
+}
+.footer-quick-booking .book-snack-btn {
+  border: 1px solid #f3ea28;
+  background: none;
+  color: #f3ea28;
+}
+.cinema-quote {
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.cinema-social-medias {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.cinema-social-medias img {
+  width: 24px;
+  height: 24px;
+}
+footer .right {
+  margin-left: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 100px;
+}
+.footer-quick-nav .text {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.footer-quick-nav li {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.footer-bottom {
+  margin-top: 25px;
+  border-top: 1px solid #ecf2ff;
+}
+.footer-bottom-nav-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-bottom .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.certificate-details {
+  text-align: center;
+  font-size: 12px;
+}
+.certificate-img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.certificate-img-container img {
+  width: 150px;
+}

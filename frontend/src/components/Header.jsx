@@ -1,11 +1,11 @@
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import HeaderLogo from "../assets/header-logo.webp";
-import SearchIcon from "../assets/ic-header-search.svg";
-import AuthIcon from "../assets/ic-header-auth.svg";
-import VietNamIcon from "../assets/footer-vietnam.svg";
-import TicketIcon from "../assets/ic-ticket.svg";
-import CornIcon from "../assets/ic-cor.svg";
+import HeaderLogo from "../assets/images/logos/header-logo.webp";
+import SearchIcon from "../assets/images/icons/ic-header-search.svg";
+import AuthIcon from "../assets/images/icons/ic-header-auth.svg";
+import VietNamIcon from "../assets/images/icons/footer-vietnam.svg";
+import TicketIcon from "../assets/images/icons/ic-ticket.svg";
+import CornIcon from "../assets/images/icons/ic-cor.svg";
 import "./Header.css";
 export function Header() {
   return (
@@ -68,7 +68,7 @@ export function Header() {
         <div className="hd-bottom-right">
           <a href="/">Khuyến mãi</a>
           <a href="/">Tổ chức sự kiện</a>
-          <a href="/">Dịch vụ giải trí</a>
+          <a href="/">Dịch vụ giải trí khác </a>
           <a href="/">Giới thiệu</a>
         </div>
       </div>

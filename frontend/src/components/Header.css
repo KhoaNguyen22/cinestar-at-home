@@ -2,14 +2,17 @@ header {
   color: #f8fafc;
   background-color: #0f172a;
   position: fixed;
+  top: 0;
+  padding-left: 300px;
+  padding-right: 300px;
   width: 100%;
+  z-index: 100;
 }
 .hd-top,
 .hd-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 80%;
 }
 .hd-top {
   height: 78px;
@@ -130,4 +133,17 @@ header {
 .hd-bottom-right {
   display: flex;
   gap: 26px;
+}
+.cinema-picker,
+.show-picker {
+  cursor: pointer;
+}
+.cinema-picker:hover,
+.show-picker:hover {
+  color: #f3ea28;
+}
+.hd-bottom-right a:hover {
+  color: #f3ea28;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }

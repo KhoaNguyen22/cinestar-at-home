@@ -1,0 +1,386 @@
+.swiper {
+  color: #ecf2ff;
+}
+.main-content {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+.app-container {
+  background-color: #0f172a;
+}
+.banner-swiper-container img {
+  width: 100%;
+  border-radius: 6px;
+}
+.quick-booking-container {
+  background-color: #ecf2ff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+.quick-booking-container {
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+}
+.quick-booking-container h1 {
+  font-weight: 300;
+  color: #464545;
+}
+.quick-booking-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.quick-booking-filter select {
+  color: #639;
+}
+.navigate-filter-btn {
+  background-color: #639;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+.quick-booking-container option {
+  color: #0f172a;
+}
+.quick-booking-container select,
+.navigate-filter-btn {
+  border-radius: 6px;
+  height: 100%;
+  height: 48px;
+  text-align: center;
+}
+.current-show-container {
+  margin-top: 50px;
+}
+.heading {
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  color: #ecf2ff;
+  text-align: center;
+}
+.movie-image {
+  width: 100%;
+}
+.movie-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+}
+.movie-action-container {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.watch-movie-trailer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.movie-action-container > a > .book-ticket-btn {
+  padding: 10px 60px;
+  font-size: 18px;
+}
+.watch-movie-trailer span {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.watch-movie-trailer img {
+  border-radius: 100%;
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.upcoming-show-container {
+  margin-top: 50px;
+}
+.see-more-nav {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.promotion-swiper-container {
+  margin-top: 150px;
+}
+.see-more-nav a {
+  width: 250px;
+  padding: 10px 80px;
+  border: 1px solid #f3ea28;
+  border-radius: 5px;
+  color: #f3ea28;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+}
+.promotion-swiper-container .heading {
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  color: #ecf2ff;
+  margin-bottom: 50px;
+}
+.promotion-swiper-slide {
+  width: 300px;
+}
+.promotion-swiper-slide img {
+  width: 100%;
+}
+.promotion-swiper-container .see-more-nav a {
+  background-color: #f3ea28;
+  color: #0f172a;
+}
+
+.membership-programs-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 200px;
+}
+.membership-program {
+  flex: 1;
+  color: #ecf2ff;
+}
+.membership-program .heading {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.membership-program .see-more-nav {
+  justify-content: start;
+}
+.membership-program .see-more-nav a {
+  background-color: #f3ea28;
+  color: #0f172a;
+}
+.membership-program img {
+  width: 100%;
+}
+.membership-content {
+  margin-top: 150px;
+  padding-top: 200px;
+  background-color: black;
+  background-image: url("../assets/images/backgrounds/cinema-bg.webp");
+}
+.membership-content .heading {
+  font-size: 36px;
+}
+.entertainments-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 50px;
+  row-gap: 15px;
+  column-gap: 25px;
+}
+.entertainments-grid-container a img {
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+}
+.other-entertainments-content {
+  padding-left: 300px;
+  padding-right: 300px;
+  margin-top: 150px;
+}
+.entertainments-description {
+  color: #ecf2ff;
+  margin-top: 75px;
+  font-size: 16px;
+  width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.contact-us {
+  display: flex;
+  margin-top: 200px;
+  padding-right: 300px;
+  padding-left: 300px;
+  padding-bottom: 100px;
+}
+
+.contact-us .left .heading {
+  text-align: center;
+  font-size: 36px;
+}
+.contact-us .left,
+.contact-us .right {
+  flex: 1;
+}
+
+.contact-us .left {
+  margin-top: 50px;
+}
+.facebook-info,
+.zalo-info {
+  margin-top: 100px;
+  display: flex;
+  margin-left: 100px;
+  align-items: center;
+  position: relative;
+}
+.contact-info {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.facebook-info {
+  margin-left: 200px;
+}
+.zalo-info {
+  margin-right: 200px;
+}
+.facebook-info img,
+.zalo-info img {
+  position: absolute;
+}
+.facebook-info img {
+  left: -100px;
+
+  height: 200px;
+}
+.zalo-info img {
+  right: -130px;
+  height: 150px;
+}
+
+.facebook-info .heading,
+.zalo-info .heading {
+  display: flex;
+  width: 375px;
+  height: 100px;
+  background-color: #639;
+  align-items: center;
+  padding-left: 45px;
+  padding-right: 45px;
+
+  border-radius: 6px;
+}
+.facebook-info .heading {
+  justify-content: right;
+}
+.zalo-info .heading {
+  justify-content: left;
+}
+.contact-us-box {
+  border-radius: 6px;
+  color: #ecf2ff;
+  background-color: rgba(51, 102, 204, 0.8);
+  padding: 40px 40px;
+}
+.contact-us-box h3 {
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+.contact-info [class$="-contact"] {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+[class$="-contact"] [class*="fa"] {
+  color: #f3ea28;
+}
+.contact-us-box input,
+.contact-us-box textarea {
+  padding: 15px 15px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: none;
+}
+.contact-us-box textarea {
+  resize: none;
+  min-height: 300px;
+}
+.contact-submit-btn {
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: #f3ea28;
+  padding: 10px 75px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.4s ease;
+}
+.contact-submit-btn:hover {
+  background-color: #639;
+  cursor: pointer;
+}
+
+.footer-top {
+  display: flex;
+}
+.footer-top .left {
+  flex: 0.3;
+}
+.footer-top .right {
+  flex: 1;
+}
+
+footer {
+  background-color: #639;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+  color: #ecf2ff;
+}
+.footer-quick-booking {
+  display: flex;
+  gap: 15px;
+}
+.footer-quick-booking .book-ticket-btn,
+.book-snack-btn {
+  padding: 10px 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.footer-quick-booking .book-ticket-btn {
+  color: #0f172a;
+}
+.footer-quick-booking .book-snack-btn {
+  border: 1px solid #f3ea28;
+  background: none;
+  color: #f3ea28;
+}
+.cinema-quote {
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.cinema-social-medias {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.cinema-social-medias img {
+  width: 24px;
+  height: 24px;
+}
+footer .right {
+  margin-left: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.footer-quick-nav {
+  flex: 0.25;
+}
+.footer-quick-nav li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
