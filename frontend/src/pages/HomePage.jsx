@@ -32,8 +32,18 @@ import ZaloLogo from "../assets/images/logos/zalo.webp";
 import HeaderLogo from "../assets/images/logos/header-logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer } from "../components/Footer";
+import { MovieInShows } from "../components/MovieInShows";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function HomePage() {
+  const [moviesInCurrentsShow, setMoviesInCurrentsShow] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/movies/showing")
+      .then((response) => setMoviesInCurrentsShow(response.data));
+  }, []);
   return (
     <>
       <Header />
@@ -111,121 +121,21 @@ function HomePage() {
           </div>
           <div className="current-show-container">
             <h1 className="heading">Phim đang chiếu</h1>
-            <div className="current-show-swiper-container">
+            <div className="show-swiper-container">
               <Swiper
                 modules={[Navigation]}
                 spaceBetween={20}
                 slidesPerView={4}
                 navigation
               >
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
+                {moviesInCurrentsShow.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <MovieInShows
+                      movie={movie}
+                      isInCurrentShow={true}
+                    ></MovieInShows>
+                  </SwiperSlide>
+                ))}
               </Swiper>
               <div className="see-more-nav">
                 <a href="#">
@@ -236,121 +146,21 @@ function HomePage() {
           </div>
           <div className="upcoming-show-container">
             <h1 className="heading">Phim sắp chiếu</h1>
-            <div className="current-show-swiper-container">
+            <div className="show-swiper-container">
               <Swiper
                 modules={[Navigation]}
                 spaceBetween={20}
                 slidesPerView={4}
                 navigation
               >
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="movie-image" src={Movie} alt="" />
-                  <h1 className="movie-title">
-                    Anh hùng T13 we could be hero just
-                  </h1>
-                  <div className="movie-action-container">
-                    <a href="#" className="watch-movie-trailer">
-                      <img src={PlayVideoIcon}></img>
-                      <span>Xem trailer</span>
-                    </a>
-
-                    <a href="#">
-                      <button className="book-ticket-btn">
-                        <span>Đặt vé</span>
-                      </button>
-                    </a>
-                  </div>
-                </SwiperSlide>
+                {moviesInCurrentsShow.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <MovieInShows
+                      movie={movie}
+                      isInCurrentShow={false}
+                    ></MovieInShows>
+                  </SwiperSlide>
+                ))}
               </Swiper>
               <div className="see-more-nav">
                 <a href="#">

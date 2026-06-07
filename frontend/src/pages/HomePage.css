@@ -46,6 +46,7 @@
   align-items: center;
   padding: 10px 15px;
 }
+
 .quick-booking-container option {
   color: #0f172a;
 }
@@ -65,36 +66,6 @@
   color: #ecf2ff;
   text-align: center;
 }
-.movie-image {
-  width: 100%;
-}
-.movie-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 22px;
-}
-.movie-action-container {
-  margin-top: 35px;
-  display: flex;
-  justify-content: space-between;
-}
-.watch-movie-trailer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.movie-action-container > a > .book-ticket-btn {
-  padding: 10px 60px;
-  font-size: 18px;
-}
-.watch-movie-trailer span {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-.watch-movie-trailer img {
-  border-radius: 100%;
-  border: 1px solid hsla(0, 0%, 100%, 0.5);
-}
 
 .upcoming-show-container {
   margin-top: 50px;
@@ -113,6 +84,7 @@
   padding: 10px 80px;
   border: 1px solid #f3ea28;
   border-radius: 5px;
+  text-align: center;
   color: #f3ea28;
   text-transform: uppercase;
   font-family: "Anton", sans-serif;
@@ -225,6 +197,7 @@
   align-items: center;
   position: relative;
 }
+
 .contact-info {
   margin-top: 15px;
   margin-bottom: 50px;
@@ -311,76 +284,4 @@
 .contact-submit-btn:hover {
   background-color: #639;
   cursor: pointer;
-}
-
-.footer-top {
-  display: flex;
-}
-.footer-top .left {
-  flex: 0.3;
-}
-.footer-top .right {
-  flex: 1;
-}
-
-footer {
-  background-color: #639;
-  padding-top: 150px;
-  padding-bottom: 50px;
-  padding-left: 300px;
-  padding-right: 300px;
-  color: #ecf2ff;
-}
-.footer-quick-booking {
-  display: flex;
-  gap: 15px;
-}
-.footer-quick-booking .book-ticket-btn,
-.book-snack-btn {
-  padding: 10px 20px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.footer-quick-booking .book-ticket-btn {
-  color: #0f172a;
-}
-.footer-quick-booking .book-snack-btn {
-  border: 1px solid #f3ea28;
-  background: none;
-  color: #f3ea28;
-}
-.cinema-quote {
-  text-transform: uppercase;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.cinema-social-medias {
-  margin-top: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.cinema-social-medias img {
-  width: 24px;
-  height: 24px;
-}
-footer .right {
-  margin-left: 25px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-.footer-quick-nav {
-  flex: 0.25;
-}
-.footer-quick-nav li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
 }
