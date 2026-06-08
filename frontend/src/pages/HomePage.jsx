@@ -36,7 +36,7 @@ import { MovieInShows } from "../components/MovieInShows";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function HomePage() {
+export function HomePage() {
   const [moviesInCurrentsShow, setMoviesInCurrentsShow] = useState([]);
 
   useEffect(() => {
@@ -316,4 +316,3 @@ function HomePage() {
     </>
   );
 }
-export default HomePage;
