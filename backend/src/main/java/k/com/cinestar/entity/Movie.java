@@ -37,7 +37,7 @@ public class Movie {
 
     int duration;
     String country;
-    String language;
+    String subtitle;
     String ageRating;
     String description;
     String content;
