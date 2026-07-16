@@ -1,7 +1,5 @@
 package k.com.cinestar.entity;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;

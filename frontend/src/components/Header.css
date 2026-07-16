@@ -45,7 +45,7 @@ header {
 }
 
 .book-ticket-btn,
-.book-snack-and-drink-btn {
+.book-snack-btn {
   font-family: "Anton", sans-serif;
   font-size: 14px;
 
@@ -61,22 +61,18 @@ header {
   display: flex;
   align-items: center;
   background: #f3ea28;
-  color: black;
 }
-
 .book-ticket-btn:hover {
   background: linear-gradient(106deg, #639, #36c 102.69%);
-  color: #f8fafc;
 }
-
-.book-snack-and-drink-btn {
+.book-snack-btn {
   display: flex;
   color: #f8fafc;
 
   align-items: center;
   background: linear-gradient(106deg, #639, #36c 102.69%);
 }
-.book-snack-and-drink-btn:hover {
+.book-snack-btn:hover {
   background: linear-gradient(90deg, #ff6d00, #ffc107);
 }
 /* Header top right styles */

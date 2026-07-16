@@ -2,7 +2,6 @@ package k.com.cinestar.controller;
 
 import java.util.List;
 
-import k.com.cinestar.dto.CinemaOptionDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,7 @@ public class CinemaController {
     private final CinemaService cinemaService;
 
     @GetMapping
-    public List<CinemaOptionDTO> getAllCinema() {
+    public List<Cinema> getAllCinema() {
         return cinemaService.findAllCinemas();
     }
 }

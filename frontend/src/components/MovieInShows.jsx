@@ -11,10 +11,10 @@ export function MovieInShows({ movie, isInCurrentShow }) {
   return (
     <>
       <div className="movie-overview-container">
-        <a href="/m" className="movie-image-container">
+        <a href="#" className="movie-image-container">
           <img className="movie-image" src={Movie} alt="" />
           <div className="movie-overlay">
-            <h1 className="movie-title">{`${movie.title} (${movie.ageRating})`}</h1>
+            <h1 className="movie-title">{movie.title}</h1>
 
             <div className="movie-info">
               <img src={TagIcon}></img>
