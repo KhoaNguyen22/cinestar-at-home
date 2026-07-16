@@ -37,13 +37,101 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export function HomePage() {
-  const [moviesInCurrentsShow, setMoviesInCurrentsShow] = useState([]);
+  const [moviesInCurrentShow, setMoviesInCurrentShow] = useState([]);
+  const [cinemaOptions, setCinemaOptions] = useState([]);
+  const [cinemaFilteredShows, setCinemaFilteredShows] = useState([]);
+
+  const [selectedCinemaOption, setSelectedCinemaOption] = useState("");
+  const [selectedMovieOption, setSelectedMovieOption] = useState("");
+  const [selectedDateOption, setSelectedDateOption] = useState("");
+  const [selectedTimeOption, setSelectedTimeOption] = useState("");
+
+  const movieIdsInSelectedCinema = new Set(
+    cinemaFilteredShows.map((show) => show.movieId),
+  );
+
+  const movieFilteredShows = cinemaFilteredShows.filter(
+    (show) => show.movieId === Number(selectedMovieOption),
+  );
+
+  const dateFilteredShows = movieFilteredShows.filter(
+    (show) =>
+      new Date(show.startTime).toISOString().split("T")[0] ===
+      selectedDateOption,
+  );
+
+  const movieOptions = moviesInCurrentShow.filter((movie) =>
+    movieIdsInSelectedCinema.has(movie.id),
+  );
+  const showDateOptions = [
+    ...new Set(
+      movieFilteredShows.map(
+        (show) => new Date(show.startTime).toISOString().split("T")[0],
+      ),
+    ),
+  ];
+
+  const showTimeOptions = dateFilteredShows.map((show) => {
+    const date = new Date(show.startTime);
+    const showTime = `${date.getHours()}:${date.getMinutes()}`;
+    return showTime;
+  });
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/movies/showing").then((response) => {
+      setMoviesInCurrentShow(response.data);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/cinemas").then((response) => {
+      setCinemaOptions(response.data);
+    });
+  }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/movies/showing")
-      .then((response) => setMoviesInCurrentsShow(response.data));
-  }, []);
+      .get(`http://localhost:8080/api/shows/cinema/${selectedCinemaOption}`)
+      .then((response) => {
+        setCinemaFilteredShows(response.data);
+      });
+  }, [selectedCinemaOption]);
+
+  const handleCinemaOptionChange = (e) => {
+    setSelectedCinemaOption(e.target.value);
+
+    setSelectedMovieOption("");
+    console.log(selectedCinemaOption);
+  };
+  const handleMovieOptionChange = (e) => {
+    setSelectedMovieOption(e.target.value);
+    setSelectedDateOption("");
+  };
+  const handleDateOptionChange = (e) => {
+    setSelectedDateOption(e.target.value);
+  };
+  const handleTimeOptionChange = (e) => {
+    setSelectedTimeOption(e.target.value);
+  };
+
+  function formatShowDateOption(showDateOption) {
+    const showDate = new Date(showDateOption);
+    const weekday = new Intl.DateTimeFormat("vi-VN", {
+      weekday: "long",
+    }).format(showDate);
+    const day = showDate.getDate();
+    const month = showDate.getMonth() + 1;
+    const formatDate = `${weekday},${day}/${month}`;
+    return formatDate;
+  }
+
+  function formatMovieOption(movieOption) {
+    let movieOptionDisplay = `${movieOption.title} (${movieOption.ageRating})`;
+    movieOptionDisplay =
+      movieOptionDisplay.length > 20
+        ? movieOptionDisplay.substring(0, 17) + "..."
+        : movieOptionDisplay;
+    return movieOptionDisplay;
+  }
   return (
     <>
       <Header />
@@ -70,49 +158,64 @@ export function HomePage() {
             </div>
 
             <div className="quick-booking-filter">
-              <select name="cinema">
-                <option defaultChecked>Chọn rạp</option>
-                <option value="a">Cinema Hai Bà Trưng</option>
-                <option value="b">Cinema Hai Bà Trưng</option>
-                <option value="c">Cinema Hai Bà Trưng</option>
-                <option value="d">Cinema Hai Bà Trưng</option>
-                <option value="e">Cinema Hai Bà Trưng</option>
-                <option value="f">Cinema Hai Bà Trưng</option>
-                <option value="g">Cinema Hai Bà Trưng</option>
-                <option value="h">Cinema Hai Bà Trưng</option>
+              <select
+                value={selectedCinemaOption}
+                name="cinema"
+                onChange={handleCinemaOptionChange}
+              >
+                <option hidden={true} value="" defaultChecked>
+                  Chọn rạp
+                </option>
+                {cinemaOptions.map((cinemaOption) => (
+                  <option
+                    value={cinemaOption.id}
+                    key={cinemaOption.id}
+                  >{`${cinemaOption.name}(${cinemaOption.location})`}</option>
+                ))}
               </select>
 
-              <select name="cinema">
-                <option defaultChecked>Chọn phim</option>
-                <option value="b">Cinema Hai Bà Trưng</option>
-                <option value="c">Cinema Hai Bà Trưng</option>
-                <option value="d">Cinema Hai Bà Trưng</option>
-                <option value="e">Cinema Hai Bà Trưng</option>
-                <option value="f">Cinema Hai Bà Trưng</option>
-                <option value="g">Cinema Hai Bà Trưng</option>
-                <option value="h">Cinema Hai Bà Trưng</option>
+              <select
+                onChange={handleMovieOptionChange}
+                value={selectedMovieOption}
+                name="movie"
+                disabled={selectedCinemaOption === ""}
+              >
+                <option value="" hidden={true} defaultChecked>
+                  Chọn phim
+                </option>
+                {movieOptions.map((movieOption) => {
+                  return (
+                    <option value={movieOption.id} key={movieOption.id}>
+                      {formatMovieOption(movieOption)}
+                    </option>
+                  );
+                })}
               </select>
 
-              <select name="cinema">
-                <option defaultChecked>Chọn ngày</option>
-                <option value="b">Cinema Hai Bà Trưng</option>
-                <option value="c">Cinema Hai Bà Trưng</option>
-                <option value="d">Cinema Hai Bà Trưng</option>
-                <option value="e">Cinema Hai Bà Trưng</option>
-                <option value="f">Cinema Hai Bà Trưng</option>
-                <option value="g">Cinema Hai Bà Trưng</option>
-                <option value="h">Cinema Hai Bà Trưng</option>
+              <select
+                disabled={selectedMovieOption === ""}
+                name="showDate"
+                onChange={handleDateOptionChange}
+              >
+                <option hidden={true} defaultChecked>
+                  Chọn ngày
+                </option>
+                {showDateOptions.map((showDateOption) => {
+                  return (
+                    <option value={showDateOption} key={showDateOption}>
+                      {formatShowDateOption(showDateOption)}
+                    </option>
+                  );
+                })}
               </select>
 
-              <select name="cinema">
-                <option defaultChecked>Chọn suất</option>
-                <option value="b">Cinema Hai Bà Trưng</option>
-                <option value="c">Cinema Hai Bà Trưng</option>
-                <option value="d">Cinema Hai Bà Trưng</option>
-                <option value="e">Cinema Hai Bà Trưng</option>
-                <option value="f">Cinema Hai Bà Trưng</option>
-                <option value="g">Cinema Hai Bà Trưng</option>
-                <option value="h">Cinema Hai Bà Trưng</option>
+              <select name="showTime" onChange={handleTimeOptionChange}>
+                <option hidden="true" defaultChecked>
+                  Chọn suất
+                </option>
+                {showTimeOptions.map((showTimeOption) => (
+                  <option>{showTimeOption}</option>
+                ))}
               </select>
               <div className="navigate-filter-btn">
                 <a href="#">Đặt ngay</a>
@@ -128,7 +231,7 @@ export function HomePage() {
                 slidesPerView={4}
                 navigation
               >
-                {moviesInCurrentsShow.map((movie) => (
+                {moviesInCurrentShow.map((movie) => (
                   <SwiperSlide key={movie.id}>
                     <MovieInShows
                       movie={movie}
@@ -153,7 +256,7 @@ export function HomePage() {
                 slidesPerView={4}
                 navigation
               >
-                {moviesInCurrentsShow.map((movie) => (
+                {moviesInCurrentShow.map((movie) => (
                   <SwiperSlide key={movie.id}>
                     <MovieInShows
                       movie={movie}

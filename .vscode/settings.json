@@ -1,0 +1,4 @@
+{
+  "terminal.integrated.cwd": "frontend",
+  "js/ts.suggest.paths": true
+}

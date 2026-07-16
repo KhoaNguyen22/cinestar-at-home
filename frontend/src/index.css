@@ -6,6 +6,10 @@
 *::after {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* 2. Remove default margin */
 *:not(dialog) {
@@ -21,6 +25,8 @@
 }
 
 body {
+  padding-top: 123px;
+  font-family: "Josefin Sans", sans-serif;
   /* 4. Increase line-height */
   line-height: 1.5;
   /* 5. Improve text rendering */
