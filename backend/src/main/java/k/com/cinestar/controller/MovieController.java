@@ -2,13 +2,14 @@ package k.com.cinestar.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import k.com.cinestar.dto.MovieDetailDTO;
+import k.com.cinestar.dto.MovieInShowsDTO;
 
-import k.com.cinestar.entity.Movie;
+import org.springframework.web.bind.annotation.*;
+
 import k.com.cinestar.service.MovieService;
 import lombok.RequiredArgsConstructor;
+
 
 @RestController
 @RequestMapping("/api/movies")
@@ -16,8 +17,17 @@ import lombok.RequiredArgsConstructor;
 public class MovieController {
     private final MovieService movieService;
 
-    @GetMapping
-    public List<Movie> getAllMovies() {
-        return movieService.findAllMovies();
+
+    @GetMapping("/showing")
+    public List<MovieInShowsDTO> getMoviesInCurrentShows() {
+        return movieService.getMoviesInCurrentShows();
+    }
+    @GetMapping("/upcoming")
+    public List<MovieInShowsDTO> getMoviesInUpcomingShows() {
+        return movieService.getMoviesInUpcomingShows();
+    }
+    @GetMapping("/{movieId}")
+    public MovieDetailDTO getMovieDetail(@PathVariable int movieId) {
+        return movieService.getMovieDetail(movieId);
     }
 }

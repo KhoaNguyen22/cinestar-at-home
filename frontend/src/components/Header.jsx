@@ -12,20 +12,18 @@ export function Header() {
     <header>
       <div className="hd-top">
         <div className="hd-top-left">
-          <img src={HeaderLogo} alt="Cinestar logo"></img>
+          <a href="/">
+            <img src={HeaderLogo} alt="Cinestar logo"></img>
+          </a>
         </div>
         <div className="hd-top-mid">
-          <a href="/">
-            <button className="book-ticket-btn">
-              <img src={TicketIcon} />
-              <span>Đặt vé ngay</span>
-            </button>
+          <a href="/" className="book-ticket-btn">
+            <img src={TicketIcon} />
+            <span>Đặt vé ngay</span>
           </a>
-          <a href="/">
-            <button className="book-snack-btn">
-              <img src={CornIcon} />
-              <span>Đặt bắp nước</span>
-            </button>
+          <a href="/" className="book-snack-and-drink-btn">
+            <img src={CornIcon} />
+            <span>Đặt bắp nước</span>
           </a>
         </div>
         <div className="hd-top-right">
