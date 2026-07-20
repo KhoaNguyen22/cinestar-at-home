@@ -39,15 +39,15 @@ public class MovieService {
                 .toList();
 
     }
-    public MovieDetailDTO getMovieDetail(int id) {
-        Movie movie = movieRepository.findMovieById(id)
+    public MovieDetailDTO getMovieDetail(int movieId) {
+        Movie movie = movieRepository.findMovieById(movieId)
                 .orElseThrow(()->
                 new NoSuchElementException("Movie not found"));
         MovieDetailDTO movieDetailDTO = movieMapper.toMovieDetailDTO(movie);
 
-        movieDetailDTO.setDaysOfShows(showRepository.findDaysOfShows(id)
+        movieDetailDTO.setShowDates(showRepository.findShowTimes(movieId)
                 .stream()
-                .map(LocalDateTime::toLocalDate)
+                        .map(LocalDateTime::toLocalDate)
                         .distinct()
                 .toList());
         return movieDetailDTO;

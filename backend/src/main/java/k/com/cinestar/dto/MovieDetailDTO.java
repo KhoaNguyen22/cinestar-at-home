@@ -1,8 +1,5 @@
 package k.com.cinestar.dto;
 
-import jakarta.persistence.Entity;
-import k.com.cinestar.entity.Genre;
-import k.com.cinestar.entity.Show;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -19,7 +16,7 @@ public class MovieDetailDTO {
 
     String posterUrl;
     String title;
-    List<LocalDate> daysOfShows;
+    List<LocalDate> showDates;
 
     int duration;
     String country;
