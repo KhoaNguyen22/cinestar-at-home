@@ -36,6 +36,6 @@ public interface ShowRepository extends JpaRepository<Show, Long> {
     WHERE s.movie.id = :movieId
     ORDER BY s.startTime
 """)
-    public List<LocalDateTime> findDaysOfShows(int movieId) ;
+    public List<LocalDateTime> findShowTimes(int movieId) ;
 
 }
