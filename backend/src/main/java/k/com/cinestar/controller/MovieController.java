@@ -26,8 +26,8 @@ public class MovieController {
     public List<MovieInShowsDTO> getMoviesInUpcomingShows() {
         return movieService.getMoviesInUpcomingShows();
     }
-    @GetMapping("/{id}")
-    public MovieDetailDTO getMovieDetail(@PathVariable int id) {
-        return movieService.getMovieDetail(id);
+    @GetMapping("/{movieId}")
+    public MovieDetailDTO getMovieDetail(@PathVariable int movieId) {
+        return movieService.getMovieDetail(movieId);
     }
 }
