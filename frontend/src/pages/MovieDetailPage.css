@@ -8,6 +8,12 @@
 .movie-detail-container {
   display: flex;
 }
+.movie-detail-container h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  text-transform: uppercase;
+}
 .movie-detail {
   padding-left: 20px;
   display: flex;
@@ -19,12 +25,18 @@
   font-size: 20px;
 }
 .movie-detail .heading {
+  text-align: left;
   padding: 0;
   margin: 0;
 }
 .age-rating {
   background-color: #f3ea28;
   color: black;
+}
+
+.movie-content,
+.movie-description {
+  margin-top: 30px;
 }
 .movie-content-detail {
   margin-top: 10px;
